@@ -6,7 +6,7 @@
 pkgname=thermald
 _pkgname=thermal_daemon
 pkgver=2.5.9
-pkgrel=2
+pkgrel=3
 pkgdesc='The Linux Thermal Daemon program from 01.org'
 arch=('x86_64')
 url='https://github.com/intel/thermal_daemon'
@@ -29,7 +29,7 @@ source=(
 b2sums=('bd4bb51710363cb14c8343f26bb895bdd8335fe7bb48b42452d812157e5b08d4ac96e0027ff9d648633d2aa10dd160957cb6fa7a3ca579749b02f533e6be5f44')
 
 build() {
-  cd ${_pkgname}-${pkgver}
+  cd ${_pkgname}
   ./autogen.sh
   ./configure \
     --prefix=/usr \
@@ -41,6 +41,6 @@ build() {
 }
 
 package() {
-  cd ${_pkgname}-${pkgver}
+  cd ${_pkgname}
   DESTDIR="${pkgdir}" make install
 }
