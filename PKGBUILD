@@ -3,14 +3,14 @@
 # Contributor: gilbus <aur(AT)tinkershell.eu>
 # Contributor: Bruno Pagani <archange@archlinux.org>
 
-pkgname=thermald
+pkgname=thermald-redmibook
 _pkgname=thermal_daemon
 epoch=1
-pkgver=2.5.10
+pkgver=2.5.11
 pkgrel=1
 pkgdesc='The Linux Thermal Daemon program from 01.org'
 arch=('x86_64')
-url='https://github.com/intel/thermal_daemon'
+url='https://github.com/sergoops/thermal_daemon.git'
 license=('GPL2')
 depends=(
   dbus-glib
@@ -24,10 +24,12 @@ makedepends=(
   gtk-doc
   python
 )
+conflicts=('thermald')
+provides=('thermald')
 source=(
-  "git+https://github.com/intel/thermal_daemon.git#tag=v${pkgver}"
+  "git+https://github.com/sergoops/thermal_daemon.git#tag=v${pkgver}-redmi"
 )
-b2sums=('80112fbfeb9a172d858901d72e22748ef648afc3ba1fad9dd3358d1d593bf603bd99de6798f25430bb455daeb144b33e8dc47b67fd0be788b3a66366dec11dec')
+b2sums=('12a3cb69896977167ec66c79d729476fb227a37775e865c0187b7cb1b4d0be251fcf6c61b8b9515f301a4803af6af168514e5b14784a2320639fe461595b5ae8')
 
 build() {
   cd ${_pkgname}

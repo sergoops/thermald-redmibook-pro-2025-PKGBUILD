@@ -1,4 +1,0 @@
-[thermald]
-source = "git"
-git = "https://github.com/intel/thermal_daemon.git"
-prefix = "v"
